@@ -1,0 +1,9 @@
+[submodule "backend/core/extern/pybind11"]
+	path = backend/core/extern/pybind11
+	url = https://github.com/pybind/pybind11.git
+[submodule "backend/core/extern/json"]
+	path = backend/core/extern/json
+	url = https://github.com/nlohmann/json.git
+[submodule "backend/core/extern/taskflow"]
+	path = backend/core/extern/taskflow
+	url = https://github.com/taskflow/taskflow.git
