@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ST_MODE=cloud
+      - ST_USE_SHM=false
+    volumes:
+      - ./engine/build:/engine:ro
+    restart: unless-stopped
+
+  # Optional: serve frontend via nginx for cloud mode
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

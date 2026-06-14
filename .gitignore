@@ -1,0 +1,42 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# Node
+node_modules/
+dist/
+.env
+
+# C++
+build/
+cmake-build-*/
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# Misc
+*.log
+tmp/

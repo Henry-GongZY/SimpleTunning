@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simpletunning.dev/pipeline.schema.json",
+  "title": "ISP Pipeline Configuration",
+  "description": "JSON DSL for describing an ISP processing pipeline with dynamic topology",
+  "type": "object",
+  "required": ["pipeline_id", "nodes", "edges"],
+  "properties": {
+    "pipeline_id": {
+      "type": "string",
+      "description": "Unique identifier for this pipeline configuration"
+    },
+    "nodes": {
+      "type": "array",
+      "description": "List of processing nodes in the pipeline",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique node identifier within the pipeline"
+          },
+          "type": {
+            "type": "string",
+            "description": "Node type, matching a registered ISP algorithm (e.g., RawReader, Demosaic, Denoise, ToneMapping)"
+          },
+          "params": {
+            "type": "object",
+            "description": "Node-specific parameters. Keys match the registered parameter names for this node type.",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "description": "Connections between nodes forming the DAG",
+      "items": {
+        "type": "object",
+        "required": ["source", "target"],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "ID of the source node"
+          },
+          "target": {
+            "type": "string",
+            "description": "ID of the target node"
+          }
+        }
+      }
+    }
+  }
+}

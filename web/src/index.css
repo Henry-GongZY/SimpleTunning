@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* React Flow overrides for dark theme */
+.react-flow__node {
+  font-size: 12px;
+}
+
+.react-flow__edge-path {
+  stroke: #4a5568;
+}
+
+.react-flow__background {
+  background-color: #0f0f23;
+}
+
+/* Custom node styles */
+.isp-node {
+  background: #1a1a2e;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.isp-node.selected {
+  border-color: #00d4ff;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.3);
+}
+
+.isp-node .node-header {
+  font-weight: 600;
+  font-size: 13px;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+}
+
+.isp-node .node-type {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
